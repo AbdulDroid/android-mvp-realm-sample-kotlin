@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.activities.MainView">
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Save to database" />
+
+
+    <Button
+        android:id="@+id/btn_load_persons"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Load Persons from databse"
+        app:layout_constraintTop_toBottomOf="@+id/btn_save" />
+
+    <Button
+        android:id="@+id/btn_load_dogs"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Load Dogs from databse"
+        app:layout_constraintTop_toBottomOf="@+id/btn_load_persons" />
+
+    <TextView
+        android:id="@+id/txt_result"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Hello World!"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/et_person_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Person Name"
+        android:inputType="text"
+        app:layout_constraintRight_toLeftOf="parent" />
+
+    <EditText
+        android:id="@+id/et_first_dog_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Dog Name"
+        android:inputType="text"
+        app:layout_constraintLeft_toLeftOf="@id/et_person_name"
+        app:layout_constraintTop_toBottomOf="@+id/et_person_name" />
+
+    <EditText
+        android:id="@+id/et_second_dog_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Dog Name"
+        android:inputType="text"
+        app:layout_constraintLeft_toLeftOf="@id/et_first_dog_name"
+        app:layout_constraintTop_toBottomOf="@+id/et_first_dog_name" />
+
+
+</android.support.constraint.ConstraintLayout>
