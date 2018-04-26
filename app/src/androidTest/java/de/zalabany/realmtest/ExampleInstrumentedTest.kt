@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getTargetContext()
-        assertEquals("de.appsfactory.realm_test", appContext.packageName)
+        assertEquals("de.zalabany.realmtest", appContext.packageName)
     }
 }

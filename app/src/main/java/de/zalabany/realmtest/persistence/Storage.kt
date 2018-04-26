@@ -101,16 +101,13 @@ class Storage(private val persistenceCallbackListener: PersistenceCallbackListen
                     .contains("name", person.name)
                     .findFirst()
 
-            /*val dogResultDB = realm.where(DogDB::class.java)
-                    .contains("name", person.dogs.last().name)
-                    .findFirst()
-            */
+            val dogResultDB = realm.where(DogDB::class.java)
+                    .contains("name", person.dogs.last().name).findFirst()
+
             personResultDB?.let {
                 realm.run {
                     beginTransaction()
-                    /*dogResultDB?.owners?.add(PersonDB(person.name))
-                    personResultDB.dogs.add(DogDB(person.dogs.last().name))
-                    insertOrUpdate(dogResultDB)*/
+                    personResultDB.dogs.add(dogResultDB)
                     insertOrUpdate(it)
                     commitTransaction()
                 }
