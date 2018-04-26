@@ -1,4 +1,4 @@
-package de.zalabany.realm_test.ui.presenters
+package de.zalabany.realmtest.ui.presenters
 
 /**
  * This interface provides a contract that describes the communication between the MainPresenter and the MainView
@@ -16,8 +16,9 @@ interface IMainContract {
 
     interface IMainPresenter {
         fun saveData(personName: String, firstDogName: String, secondDogName: String)
-        fun getPersons()
-        fun getDogs()
+        fun getAllPersons()
+        fun getAllDogs()
+        fun searchDatabase(query: String)
     }
 
 }

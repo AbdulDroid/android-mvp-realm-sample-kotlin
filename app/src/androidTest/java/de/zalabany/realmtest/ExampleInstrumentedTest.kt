@@ -1,4 +1,4 @@
-package de.zalabany.realm_test
+package de.zalabany.realmtest
 
 import android.support.test.InstrumentationRegistry
 import android.support.test.runner.AndroidJUnit4

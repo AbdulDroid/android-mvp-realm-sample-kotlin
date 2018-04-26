@@ -27,6 +27,20 @@
         android:text="Load Dogs from databse"
         app:layout_constraintTop_toBottomOf="@+id/btn_load_persons" />
 
+    <Button
+        android:id="@+id/btn_search_database"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Search Database"
+        app:layout_constraintTop_toBottomOf="@+id/btn_load_dogs" />
+
+    <Button
+        android:id="@+id/btn_relationships"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Connect Dogs To Owners"
+        app:layout_constraintTop_toBottomOf="@+id/btn_search_database" />
+
     <TextView
         android:id="@+id/txt_result"
         android:layout_width="wrap_content"
@@ -35,7 +49,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toBottomOf="@+id/btn_search_database" />
 
     <EditText
         android:id="@+id/et_person_name"
@@ -62,6 +76,16 @@
         android:inputType="text"
         app:layout_constraintLeft_toLeftOf="@id/et_first_dog_name"
         app:layout_constraintTop_toBottomOf="@+id/et_first_dog_name" />
+
+    <EditText
+        android:id="@+id/et_search_query"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:hint="Search Query"
+        android:inputType="text"
+        app:layout_constraintBottom_toBottomOf="@id/btn_search_database"
+        app:layout_constraintLeft_toLeftOf="@id/et_first_dog_name"
+        app:layout_constraintTop_toBottomOf="@+id/et_second_dog_name" />
 
 
 </android.support.constraint.ConstraintLayout>

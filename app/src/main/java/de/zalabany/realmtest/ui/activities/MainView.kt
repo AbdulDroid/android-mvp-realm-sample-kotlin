@@ -1,11 +1,12 @@
-package de.zalabany.realm_test.ui.activities
+package de.zalabany.realmtest.ui.activities
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
-import de.zalabany.realm_test.R
-import de.zalabany.realm_test.ui.presenters.IMainContract
-import de.zalabany.realm_test.ui.presenters.MainPresenter
+import de.zalabany.realmtest.R
+import de.zalabany.realmtest.ui.presenters.IMainContract
+import de.zalabany.realmtest.ui.presenters.MainPresenter
 import kotlinx.android.synthetic.main.activity_main.*
 
 /**
@@ -24,6 +25,8 @@ class MainView : AppCompatActivity(), View.OnClickListener, IMainContract.IMainV
         btn_load_persons.setOnClickListener(this)
         btn_load_dogs.setOnClickListener(this)
         btn_save.setOnClickListener(this)
+        btn_search_database.setOnClickListener(this)
+        btn_relationships.setOnClickListener(this)
 
         mPresenter = MainPresenter(this)
     }
@@ -33,13 +36,21 @@ class MainView : AppCompatActivity(), View.OnClickListener, IMainContract.IMainV
             R.id.btn_save -> mPresenter.saveData(et_person_name.text.toString(),
                     et_first_dog_name.text.toString(),
                     et_second_dog_name.text.toString())
-            R.id.btn_load_persons -> mPresenter.getPersons()
-            R.id.btn_load_dogs -> mPresenter.getDogs()
+
+            R.id.btn_load_persons -> mPresenter.getAllPersons()
+            R.id.btn_load_dogs -> mPresenter.getAllDogs()
+            R.id.btn_search_database -> mPresenter.searchDatabase(et_search_query.text.toString())
+            R.id.btn_relationships -> startRelationships()
         }
     }
 
     override fun updateLayout(results: String) {
         txt_result.text = results
+    }
+
+    private fun startRelationships() {
+        val intent = Intent(this, RelationshipsView::class.java)
+        startActivity(intent)
     }
 
 

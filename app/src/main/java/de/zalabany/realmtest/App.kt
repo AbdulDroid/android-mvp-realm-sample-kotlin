@@ -1,4 +1,4 @@
-package de.zalabany.realm_test
+package de.zalabany.realmtest
 
 import android.app.Application
 import io.realm.Realm
